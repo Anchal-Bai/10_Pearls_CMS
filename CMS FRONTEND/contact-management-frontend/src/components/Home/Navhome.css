@@ -1,0 +1,105 @@
+/* -----------nav bar-------------- */
+.navhome {
+    display: flex;
+    align-items: center;
+    background: transparent;
+    justify-content: space-between;
+    padding: 5px 80px;
+    width: 100vw;
+    position: fixed;
+    z-index: 999;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+}
+
+.navhome.active {
+    background-color: #0E3D16;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+}
+.navhome p {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    background: linear-gradient(70deg, rgb(3, 134, 42), rgb(0, 35, 58) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .navhome p:hover {
+    transform: scale(1.05);
+  }
+  
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#navbar li{
+    font-family: 'poppins', sans-serif;
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a{
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.3s ease-in-out;
+}
+#navbar li a:hover,
+#navbar li a.active{
+    color: #99c0a0;
+}
+#navbar li a:hover::after,
+#navbar li a.active::after
+{
+    content: "";
+    width: 30%;
+    height: 1px;
+    background: #99c0a0;
+    position: absolute;
+    bottom: 0px;
+    left:20px ;
+    text-decoration: none;
+}
+
+
+#mobile  i {
+    color: #fff;
+}
+
+#eco{
+    height: 50px;
+    left: 0px;
+}
+
+.signup-button {
+    background-color: #ffffff;
+    color: rgb(31, 117, 64);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
+  }
+  
+  .signup-button:hover {
+    background-color: rgb(31, 117, 64);
+    color: #ffffff;
+  }
+
+  /* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+
+  

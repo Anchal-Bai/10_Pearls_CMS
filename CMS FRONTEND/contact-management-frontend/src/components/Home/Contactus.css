@@ -1,0 +1,167 @@
+.CU{
+  background: linear-gradient(120deg, rgb(168, 218, 171), rgb(132, 168, 111));
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute; /* Needed for absolute positioning of blobs */
+  overflow: hidden; /* Contain any overflowing content */
+}
+
+.bloballc {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0; /* Keep it behind the content */
+}
+
+.blobc, .blobc1, .blobc2 {
+  width: 600px;
+  height: 600px;
+  position: absolute;
+  opacity: 0.49;
+}
+
+
+
+.blobc1 {
+  top: 20%;
+  right: -100px;
+}
+
+.blobc2 {
+  bottom: -50px;
+  left: -100px;
+  rotate: 180deg;
+}
+
+.contentc {
+  position: relative;
+  z-index: 1; /* Keep content above blobs */
+  color: rgb(26, 68, 40);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.svgs {
+    flex: 1; /* Adjust to take up equal space */
+    text-align: right; /* Center-align the SVG if needed */
+    margin-left: 57%;
+    position: absolute;
+    z-index: 20;
+  }
+
+  .lap{
+    width: 700px;
+    height: 700px;
+  }
+.contentc{
+    position: absolute;
+    display: flex;
+    width: 100vw;
+    color: rgb(26, 68, 40);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    z-index: 1;
+    flex: 1; 
+    margin-right: 20px; 
+}
+
+.textc h1 {
+  font-size: 4rem;
+  text-align: left;
+  width: 100vw;
+  font-weight: 500;
+  position: relative;
+  top: -50px; 
+}
+
+.textc{
+    padding-left: 25px;
+}
+
+.para{
+font-size: 1.5rem;
+    text-align: left;
+    font-weight: 450;
+    margin-top: -40px;
+    width: 50vw;
+}
+
+.socials {
+    margin-top: 20px; /* Space above socials */
+  }
+  
+  .social-item {
+    display: flex; /* Arrange icon and text in a row */
+    align-items: center; /* Vertically align items */
+    margin-bottom: 10px; /* Space between each item */
+  }
+  
+  .icon {
+    display: flex; /* Flex to align content properly */
+    justify-content: center; /* Center the icon */
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Make it circular */
+    background-color: rgb(26, 68, 40); /* Add a background color */
+    font-size: 20px; /* Adjust icon size */
+    color: rgb(168, 218, 171); /* Icon color */
+  }
+  
+
+  .social-item p{
+    font-size: 1.2rem;
+    padding-left: 8px;
+  }
+
+  .blobc, .blobc1, .blobc2, .blobc3{
+    opacity: 0.49;
+    position: absolute;
+}
+
+.blobc{
+  width: 800px;
+  height: 800px;
+  rotate: -90deg;
+  transform: translateY(-375px)  translateX(422px);
+}
+
+.blobc1{
+  width: 1000px;
+  height: 1000px;
+  rotate: -30deg;
+  transform: translateX(90px) translateY(-60px);
+  margin-top: -300px;
+}
+
+.blobc2{
+  width: 800px;
+  height: 800px;
+  rotate: 180deg;
+  margin-left: -440px;
+  transform: translateY(-110px);
+  
+}
+
+.blobc3{
+  width: 800px;
+  height: 800px;
+  margin-left: 450px;
+  margin-top: 100px;
+}
+
+.bloballc{
+overflow: hidden;
+}
+
+.contentc {
+  z-index: 10;
+}
+
+.bloballc {
+  z-index: 0;
+}
