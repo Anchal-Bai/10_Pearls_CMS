@@ -30,6 +30,21 @@ const RegisterForm = () => {
     return true;
   };
 
+  
+  const generateBoxShadow = (index) => {
+    const colors = [
+      ["rgb(0, 28, 46)", "rgb(96 165 250)", "rgb(94 234 212)"],
+      ["rgb(0, 28, 46)", "rgb(94 234 212)", "rgb(96 165 250)"],
+      ["rgb(94 234 212)", "rgb(0, 28, 46)", "rgb(96 165 250)"],
+      ["rgb(94 234 212)", "rgb(96 165 250)", "rgb(0, 28, 46)"],
+      ["rgb(96 165 250)", "rgb(94 234 212)", "rgb(0, 28, 46)"],
+      ["rgb(96 165 250)", "rgb(0, 28, 46)", "rgb(94 234 212)"],
+    ];
+    const r = Math.floor(Math.random() * 6);
+    const [c1, c2, c3] = colors[r];
+    return `-130px 0 80px 40px white, -50px 0 50px 25px ${c1}, 0 0 50px 25px ${c2}, 50px 0 50px 25px ${c3}, 130px 0 80px 40px white`;
+  };
+  
 
   const handleRegister = async (e) => {
     e.preventDefault();
@@ -66,7 +81,18 @@ const RegisterForm = () => {
   return (
     <div className='register-wrapper'>
     <div className="register-page">
-      <div className="background-container"></div>
+    <div className="background-container">
+  {[...Array(25)].map((_, i) => (
+    <div key={i} className="rainbow" style={{
+      animationDelay: `-${(i / 25) * 45}s`,
+      animationDuration: `${45 - (45 / 25 / 2 * i)}s`,
+      boxShadow: generateBoxShadow(i)
+    }} />
+  ))}
+  <div className="h" />
+  <div className="v" />
+</div>
+
 
       <div className="register-content">
         <div className="image-container">
