@@ -17,7 +17,7 @@ public class ContactService {
     @Autowired
     private ContactRepository contactRepository;
     @Autowired
-    private UserRepository  userRepository; // ✅ This must be present
+    private UserRepository  userRepository;
 
 
 
@@ -30,7 +30,7 @@ public class ContactService {
         return contactRepository.save(contact);
     }
     public Contact createContact(ContactDTO contactDTO, Principal principal) {
-        // Convert DTO to Entity (Contact)
+
         Contact contact = new Contact();
         contact.setFirstName(contactDTO.getFirstName());
         contact.setLastName(contactDTO.getLastName());
@@ -40,15 +40,15 @@ public class ContactService {
         contact.setTitle(contactDTO.getTitle());
         contact.setWorkPhone(contactDTO.getWorkPhone());
 
-        // Retrieve the authenticated user based on the principal
-        String username = principal.getName();  // Get the username/email
+
+        String username = principal.getName();
         User user = userRepository.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        // Associate the contact with the authenticated user
+
         contact.setUser(user);
 
-        // Save and return the created contact
+
         return contactRepository.save(contact);
     }
 
@@ -119,7 +119,7 @@ public class ContactService {
         User user = userRepository.findByEmail(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
 
-        contact.setUser(user); // associate contact with user
+        contact.setUser(user);
         return contactRepository.save(contact);
     }
 

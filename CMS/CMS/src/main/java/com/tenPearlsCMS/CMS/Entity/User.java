@@ -27,7 +27,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    // 👇 Add this one-to-many relationship
+
     @JsonManagedReference
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Contact> contacts = new ArrayList<>();
@@ -39,7 +39,7 @@ public class User {
         this.email = email;
         this.password = password;
     }
-    // Default constructor for JPA
+
     public User() {}
 
 }

@@ -1,4 +1,4 @@
-// src/main/java/com/tenPearlsCMS/CMS/dto/RegisterRequest.java
+
 package com.tenPearlsCMS.CMS.dto;
 
 import jakarta.validation.constraints.Email;

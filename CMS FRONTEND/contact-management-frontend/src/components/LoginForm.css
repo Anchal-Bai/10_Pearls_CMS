@@ -1,4 +1,4 @@
-/* Global reset */
+
 * {
     margin: 0;
     padding: 0;
@@ -155,7 +155,7 @@
     margin-top: 15px;
     font-size: 0.95rem;
     text-align: center;
-    color: #ffffffcc; /* subtle white */
+    color: #ffffffcc; 
   }
   
   .register-link a {

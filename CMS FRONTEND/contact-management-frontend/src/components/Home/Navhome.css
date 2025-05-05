@@ -9,7 +9,7 @@
     position: fixed;
     z-index: 999;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Added transition */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
 
 .navhome.active {
@@ -96,7 +96,7 @@
     color: #ffffff;
   }
 
-  /* Smooth scrolling */
+
 html {
   scroll-behavior: smooth;
 }

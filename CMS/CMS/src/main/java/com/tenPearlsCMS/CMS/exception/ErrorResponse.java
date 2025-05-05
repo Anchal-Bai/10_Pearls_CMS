@@ -9,7 +9,7 @@ public class ErrorResponse {
         this.status = status;
     }
 
-    // Getters and setters
+
     public String getMessage() {
         return message;
     }

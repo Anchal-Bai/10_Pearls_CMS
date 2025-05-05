@@ -13,7 +13,7 @@ public class ContactDTO {
     private String title;
     private String workPhone;
 
-    // Constructor
+
     public ContactDTO(Contact contact) {
         this.id = contact.getId();
         this.firstName = contact.getFirstName();
@@ -23,10 +23,10 @@ public class ContactDTO {
         this.homePhone = contact.getHomePhone();
         this.title = contact.getTitle();
         this.workPhone = contact.getWorkPhone();
-        // DO NOT include contact.getUser()
+
     }
 
-    // Getters and setters
+
     public Long getId() {
         return id;
     }

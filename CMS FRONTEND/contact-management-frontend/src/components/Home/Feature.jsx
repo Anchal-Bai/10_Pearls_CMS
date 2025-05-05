@@ -21,15 +21,15 @@ const Feature = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if the element has already been viewed
+   
     const hasViewed = localStorage.getItem('hasViewed');
     if (hasViewed) {
-      setIsVisible(true); // Keep it visible if already viewed
+      setIsVisible(true); 
     }
   }, []);
 
   const handleAnimationComplete = () => {
-    // Mark the animation as completed and the content as visible
+   
     localStorage.setItem('hasViewed', true);
     setIsVisible(true);
   };
@@ -40,9 +40,9 @@ const Feature = () => {
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView="show"
-            onAnimationComplete={handleAnimationComplete}  // Triggered when animation completes
-            viewport={{ once: true, amount: 0.7 }} // Trigger once when the element is in view
-            className={`textf ${isVisible ? 'visible' : ''}`} // Apply visible class if already viewed
+            onAnimationComplete={handleAnimationComplete}  
+            viewport={{ once: true, amount: 0.7 }} 
+            className={`textf ${isVisible ? 'visible' : ''}`} 
           >
           <h1>About Us!</h1>
 <div className="about-description">

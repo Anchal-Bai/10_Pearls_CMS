@@ -18,9 +18,8 @@ const LoginForm = () => {
         email,
         password
       });
-      // Store token and username in localStorage
       localStorage.setItem('token', response.data.token);
-      localStorage.setItem('username', response.data.username); // Assuming backend returns username
+      localStorage.setItem('username', response.data.username); 
       navigate('/contacts');
     } catch (error) {
       alert('Invalid credentials');

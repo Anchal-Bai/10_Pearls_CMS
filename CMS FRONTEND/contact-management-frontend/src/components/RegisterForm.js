@@ -1,18 +1,18 @@
 import React, { useState } from 'react';
 import axios from '../api/axiosConfig';
 import { useNavigate } from 'react-router-dom';
-import './Register.css'; // Link to your CSS file
+import './Register.css'; 
 import contact from '../../src/assets/svg/bird.svg'
 
 const RegisterForm = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
-  const [error, setError] = useState(''); // For displaying error messages
+  const [error, setError] = useState(''); 
   const navigate = useNavigate();
 
-  // Update form state on input change
+ 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  // Form validation before sending request
+
   const validateForm = () => {
     if (!form.name) {
       setError('Name is required');
@@ -26,28 +26,27 @@ const RegisterForm = () => {
       setError('Password must be at least 6 characters');
       return false;
     }
-    setError(''); // Reset error if all validations pass
+    setError(''); 
     return true;
   };
 
-  // Registration handler
+
   const handleRegister = async (e) => {
     e.preventDefault();
     
-    if (!validateForm()) return; // Prevent form submission if validation fails
+    if (!validateForm()) return;
 
     try {
       const response = await axios.post('/auth/register', form);
       alert('Registration successful');
       navigate('/login');
     } catch (error) {
-      console.error("Registration error:", error.response || error); // Log the error details
+      console.error("Registration error:", error.response || error); 
 
-      // Handle backend error responses
       if (error.response) {
         const { data } = error.response;
         if (data.error) {
-          // Handle specific error messages from backend
+        
           if (data.error === 'User already exists') {
             setError('Email is already registered');
           } else if (data.error === 'Name is invalid') {
@@ -85,7 +84,7 @@ const RegisterForm = () => {
           <form onSubmit={handleRegister} className="register-form">
             <h2 className="register-title">Create an Account</h2>
 
-            {error && <div className="error-message">{error}</div>} {/* Display error message */}
+            {error && <div className="error-message">{error}</div>} 
 
             <input
               name="name"

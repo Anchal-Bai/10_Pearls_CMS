@@ -7,7 +7,6 @@ function Navhome() {
   const [activeSection, setActiveSection] = useState('hero');
   const [navbarSolid, setNavbarSolid] = useState(false);
 
-  // Track active section
   useEffect(() => {
     const handleScroll = () => {
       const sections = ['hero', 'feature', 'contactus'];
@@ -21,7 +20,6 @@ function Navhome() {
         }
       });
 
-      // Add solid background when scrolled 100px or more
       if (window.scrollY >= 100) {
         setNavbarSolid(true);
       } else {

@@ -17,8 +17,8 @@ function Contacts() {
     title: '',
     workPhone: ''
   });
-  const [loading, setLoading] = useState(false); // Loading state
-  const [error, setError] = useState(''); // Error state
+  const [loading, setLoading] = useState(false); 
+  const [error, setError] = useState(''); 
   const [editContactId, setEditContactId] = useState(null);
 
   const token = localStorage.getItem('token');
@@ -44,12 +44,12 @@ function Contacts() {
         } else {
           console.error("Fetched data is not an array", data);
         }
-        setLoading(false); // Stop loading
+        setLoading(false); 
       })
       .catch(error => {
         console.error('Error fetching contacts:', error.message);
         setError('Failed to fetch contacts.');
-        setLoading(false); // Stop loading
+        setLoading(false); 
       });
   }, [token]);
 
@@ -92,7 +92,7 @@ function Contacts() {
         },
         body: JSON.stringify({
           ...newContact,
-          id: editContactId  // 👈 ensure id is sent during PUT
+          id: editContactId  
         }),
       });
 
@@ -195,7 +195,6 @@ function Contacts() {
   
   return (
     <div className="contacts-page">
-    {/* Top Bar with Username */}
     <div className="top-bar">
   <div className="company-name">Contact Management System</div>
   <div className="user-info">

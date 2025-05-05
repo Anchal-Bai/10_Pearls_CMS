@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Contactus.css'
-// import Laptop from '../../assets/svg/Laptop.svg';
+
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -18,15 +18,15 @@ const Contactus = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Check if the element has already been viewed
+    
     const hasViewed = localStorage.getItem('hasViewed');
     if (hasViewed) {
-      setIsVisible(true); // Keep it visible if already viewed
+      setIsVisible(true); 
     }
   }, []);
 
   const handleAnimationComplete = () => {
-    // Mark the animation as completed and the content as visible
+    
     localStorage.setItem('hasViewed', true);
     setIsVisible(true);
   };
@@ -38,9 +38,9 @@ const Contactus = () => {
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView="show"
-            onAnimationComplete={handleAnimationComplete}  // Triggered when animation completes
-            viewport={{ once: true, amount: 0.7 }} // Trigger once when the element is in view
-            className={`textc ${isVisible ? 'visible' : ''}`} // Apply visible class if already viewed
+            onAnimationComplete={handleAnimationComplete}  
+            viewport={{ once: true, amount: 0.7 }} 
+            className={`textc ${isVisible ? 'visible' : ''}`} 
           >
         <h1>Get In Touch</h1>
         <p className='para'>Stay informed with our updates, follow us on social media, or contact us for collaborations. Let's build a sustainable future together.</p>
@@ -69,13 +69,11 @@ const Contactus = () => {
             variants={fadeIn('up', 0.2)}
             initial="hidden"
             whileInView="show"
-            onAnimationComplete={handleAnimationComplete}  // Triggered when animation completes
-            viewport={{ once: true, amount: 0.7 }} // Trigger once when the element is in view
-            className={`svgs ${isVisible ? 'visible' : ''}`} // Apply visible class if already viewed
+            onAnimationComplete={handleAnimationComplete}  
+            viewport={{ once: true, amount: 0.7 }} 
+            className={`svgs ${isVisible ? 'visible' : ''}`} 
           >
-        {/* <object className="object">
-            <embed src={Lap} className='lap'></embed>
-          </object> */}
+      
       </motion.div>
 
       <div className="bloballc">

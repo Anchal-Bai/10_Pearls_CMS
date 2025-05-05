@@ -117,7 +117,7 @@ public class ContactController {
         User user = userRepository.findByEmail(email)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
-        // Fetch and map to DTO
+
         List<ContactDTO> dtoList = contactRepository.findByUserId(user.getId()).stream()
                 .map(ContactDTO::new)
                 .collect(Collectors.toList());

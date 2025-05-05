@@ -44,7 +44,7 @@
     }
   }
   
-  /* Layout */
+
   .register-page {
     display: flex;
     justify-content: center;
@@ -67,7 +67,7 @@
     overflow: hidden;
   }
   
-  /* Animated Image */
+
   .image-container {
     flex: 1;
     position: relative;
@@ -92,7 +92,7 @@
     }
   }
   
-  /* Form Styling */
+ 
   .register-container {
     flex: 1;
     padding: 30px;
@@ -161,18 +161,18 @@
     margin-top: 15px;
     font-size: 0.95rem;
     text-align: center;
-    color: #ffffffcc; /* slightly faded white */
+    color: #ffffffcc; 
   }
   
   .login-link a {
-    color: #021b1f; /* modern teal */
+    color: #021b1f; 
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
   }
   
   .login-link a:hover {
-    color: #0a353b; /* brighter on hover */
+    color: #0a353b; 
     text-decoration: underline;
   }
   .back-btn {
