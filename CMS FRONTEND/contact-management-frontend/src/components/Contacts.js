@@ -54,10 +54,22 @@ function Contacts() {
   }, [token]);
 
   const handleEditContact = (contact) => {
-    setNewContact(contact);  // Make sure contact includes `id`
+    if (!contact) return;
+  
+    setNewContact({
+      firstName: contact.firstName || '',
+      lastName: contact.lastName || '',
+      personalEmail: contact.personalEmail || '',
+      workEmail: contact.workEmail || '',
+      homePhone: contact.homePhone || '',
+      title: contact.title || '',
+      workPhone: contact.workPhone || ''
+    });
+  
     setEditContactId(contact.id);
     setShowForm(true);
   };
+  
 
   const handleSaveContact = async () => {
     if (!newContact.firstName || !newContact.lastName) {
@@ -135,7 +147,7 @@ function Contacts() {
   };
   const handleDeleteContact = async (id) => {
     if (!window.confirm("Are you sure you want to delete this contact permanently?")) return;
-
+  
     try {
       const response = await fetch(`http://localhost:8080/api/contacts/${id}`, {
         method: 'DELETE',
@@ -143,16 +155,21 @@ function Contacts() {
           'Authorization': `Bearer ${token}`
         }
       });
-
-      if (!response.ok) throw new Error("Failed to delete contact");
-
+  
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || "Failed to delete contact");
+      }
+  
       setContacts(prev => prev.filter(contact => contact.id !== id));
     } catch (error) {
-      console.error("Delete error:", error.message);
-      alert("Failed to delete contact.");
+      console.error("Delete error:", error);
+      alert(`An unexpected error occurred: ${error.message}`);
     }
   };
-
+  
+  
+  
 
   const handleCreateContact = () => {
     setShowForm(true);

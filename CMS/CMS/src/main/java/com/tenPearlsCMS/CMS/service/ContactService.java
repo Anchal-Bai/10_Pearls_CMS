@@ -62,6 +62,7 @@ public class ContactService {
         contactRepository.delete(contact);
     }
 
+
     public Contact updateContact(Long userId, Long contactId, Contact updatedContact) {
         Contact contact = contactRepository.findById(contactId)
                 .orElseThrow(() -> new RuntimeException("Contact not found"));

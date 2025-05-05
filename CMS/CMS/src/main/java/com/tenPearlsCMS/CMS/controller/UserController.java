@@ -15,17 +15,12 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    // API to fetch the current user's username (email)
+
     @GetMapping("/me")
     public String getCurrentUsername(Authentication authentication) {
-        return authentication.getName(); // returns the email or username from JWT token
+        return authentication.getName();
     }
 
-    // OR: If you want full user info (excluding password)
-//    @GetMapping("/me/details")
-//    public User getCurrentUserDetails(Authentication authentication) {
-//        return userService.getUserFromAuth(authentication);
-//    }
     @GetMapping("/me/details")
     public UserResponseDTO getCurrentUserDetails(Authentication authentication) {
         User user = userService.getUserFromAuth(authentication);
